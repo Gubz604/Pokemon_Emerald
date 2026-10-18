@@ -716,10 +716,6 @@ LittlerootTown_EventScript_MomReturnHomeFemale5::
 	waitdooranim
 	return
 
-LittlerootTown_EventScript_Rhydon_Is_First::
-	msgbox LittlerootTown_Text_Rhydon_Is_First, MSGBOX_NPC
-	end
-
 LittlerootTown_Movement_MomApproachPlayer0:
 	walk_up
 	walk_up
@@ -1021,6 +1017,31 @@ LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 
 
 
+LittlerootTown_EventScript_Rhydon_Is_First::
+	msgbox LittlerootTown_Text_Rhydon_Is_First, MSGBOX_NPC
+	end
+
+LittlerootTown_EventScript_RhydonGuy_Repeat::
+	msgbox LittlerootTown_Text_RhydonGuy_Repeat, MSGBOX_DEFAULT
+	goto LittlerootTown_EventScript_RhydonGuy_Finish
+
+LittlerootTown_Text_RhydonGuy_Repeat:
+	.string "Use that POTION wisely!$"
+
+LittlerootTown_EventScript_RhydonGuy_Gives_Potion::
+	lock
+	faceplayer
+	goto_if_set FLAG_RECEIVED_RHYDON_NPC_POTION, LittlerootTown_EventScript_RhydonGuy_Repeat
+	giveitem ITEM_POTION, 1
+	goto_if_eq VAR_RESULT, FALSE, LittlerootTown_EventScript_RhydonGuy_Finish
+	setflag FLAG_RECEIVED_RHYDON_NPC_POTION
+	msgbox LittlerootTown_Text_Rhydon_Is_First, MSGBOX_DEFAULT
+	release
+	end
+
+LittlerootTown_EventScript_RhydonGuy_Finish::
+	release
+	end
 
 LittlerootTown_Text_Rhydon_Is_First:
 	.string "Did you know that the POKEMON\n"
