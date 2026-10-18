@@ -716,6 +716,10 @@ LittlerootTown_EventScript_MomReturnHomeFemale5::
 	waitdooranim
 	return
 
+LittlerootTown_EventScript_Rhydon_Is_First::
+	msgbox LittlerootTown_Text_Rhydon_Is_First, MSGBOX_NPC
+	end
+
 LittlerootTown_Movement_MomApproachPlayer0:
 	walk_up
 	walk_up
@@ -1014,3 +1018,11 @@ LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 	.string "I have something to show you.\n"
 	.string "Let's go to my LAB.$"
 
+
+
+
+
+LittlerootTown_Text_Rhydon_Is_First:
+	.string "Did you know that the POKEMON\n"
+	.string "Rhydon is the very first POKEMON!\p"
+	.string "POKEMON IS NEAT!$"
