@@ -1034,7 +1034,7 @@ LittlerootTown_EventScript_RhydonGuy_Gives_Potion::
 	goto_if_set FLAG_RECEIVED_RHYDON_NPC_POTION, LittlerootTown_EventScript_RhydonGuy_Repeat
 	msgbox LittlerootTown_Text_RhydonGuy_Offer, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, LittlerootTown_EventScript_RhydonGuy_Declined
-	givemon SPECIES_HAUNTER, 15, ITEM_TRADE_STONE
+	givemon SPECIES_CLAMPERL, 15, ITEM_SUN_STONE
 	goto_if_eq VAR_RESULT, MON_CANT_GIVE, LittlerootTown_EventScript_RhydonGuy_Finish
 	setflag FLAG_RECEIVED_RHYDON_NPC_POTION
 	msgbox LittlerootTown_Text_Rhydon_Is_First, MSGBOX_DEFAULT
