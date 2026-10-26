@@ -1034,8 +1034,8 @@ LittlerootTown_EventScript_RhydonGuy_Gives_Potion::
 	goto_if_set FLAG_RECEIVED_RHYDON_NPC_POTION, LittlerootTown_EventScript_RhydonGuy_Repeat
 	msgbox LittlerootTown_Text_RhydonGuy_Offer, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, LittlerootTown_EventScript_RhydonGuy_Declined
-	giveitem ITEM_TRADE_STONE, 1
-	goto_if_eq VAR_RESULT, FALSE, LittlerootTown_EventScript_RhydonGuy_Finish
+	givemon SPECIES_KADABRA, 15, ITEM_TRADE_STONE
+	goto_if_eq VAR_RESULT, MON_CANT_GIVE, LittlerootTown_EventScript_RhydonGuy_Finish
 	setflag FLAG_RECEIVED_RHYDON_NPC_POTION
 	msgbox LittlerootTown_Text_Rhydon_Is_First, MSGBOX_DEFAULT
 	release
@@ -1059,3 +1059,8 @@ LittlerootTown_EventScript_RhydonGuy_Declined::
 
 LittlerootTown_Text_RhydonGuy_Declined:
 	.string "Okay, maybe next time!$"
+	
+
+
+
+
