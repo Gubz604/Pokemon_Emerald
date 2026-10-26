@@ -1032,7 +1032,9 @@ LittlerootTown_EventScript_RhydonGuy_Gives_Potion::
 	lock
 	faceplayer
 	goto_if_set FLAG_RECEIVED_RHYDON_NPC_POTION, LittlerootTown_EventScript_RhydonGuy_Repeat
-	giveitem ITEM_POTION, 1
+	msgbox LittlerootTown_Text_RhydonGuy_Offer, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, LittlerootTown_EventScript_RhydonGuy_Declined
+	giveitem ITEM_TRADE_STONE, 1
 	goto_if_eq VAR_RESULT, FALSE, LittlerootTown_EventScript_RhydonGuy_Finish
 	setflag FLAG_RECEIVED_RHYDON_NPC_POTION
 	msgbox LittlerootTown_Text_Rhydon_Is_First, MSGBOX_DEFAULT
@@ -1047,3 +1049,13 @@ LittlerootTown_Text_Rhydon_Is_First:
 	.string "Did you know that the POKEMON\n"
 	.string "Rhydon is the very first POKEMON!\p"
 	.string "POKEMON IS NEAT!$"
+
+LittlerootTown_Text_RhydonGuy_Offer:
+	.string "Would you like a TRADE STONE?$"
+
+LittlerootTown_EventScript_RhydonGuy_Declined::
+	msgbox LittlerootTown_Text_RhydonGuy_Declined, MSGBOX_DEFAULT
+	goto LittlerootTown_EventScript_RhydonGuy_Finish
+
+LittlerootTown_Text_RhydonGuy_Declined:
+	.string "Okay, maybe next time!$"

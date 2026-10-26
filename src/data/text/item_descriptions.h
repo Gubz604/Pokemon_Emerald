@@ -389,6 +389,11 @@ static const u8 sWaterStoneDesc[] = _(
     "species of POKéMON\n"
     "evolve.");
 
+static const u8 sTradeStoneDesc[] = _(
+    "Evolves POKéMON\n"
+    "that require\n"
+    "trade.");
+
 static const u8 sLeafStoneDesc[] = _(
     "Makes certain\n"
     "species of POKéMON\n"
