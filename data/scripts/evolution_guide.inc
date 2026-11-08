@@ -22,11 +22,17 @@ Common_Text_EvolutionGuide:
 	.string "Raise it to Lv. 26.\p"
     .string "SEADRA to KINGDRA:\n"
 	.string "Use a WATER STONE.\p"
+    .string "EEVEE to UMBREON:\n"
+	.string "Use a MOON STONE.\p"
+    .string "EEVEE to ESPEON:\n"
+	.string "Use a SUN STONE.\p"
     .string "PORYGON to PORYGON2:\n"
 	.string "Use a TRADE STONE.\p"
     .string "CLAMPERL to HUNTAIL:\n"
 	.string "Use a MOON STONE.\p"
     .string "CLAMPERL to GOREBYSS:\n"
-	.string "Use a SUN STONE.$"
+	.string "Use a SUN STONE.\p"
+    .string "FEEBAS to MILOTIC:\n"
+	.string "Raise it to Lv. 20.$"
 
 
